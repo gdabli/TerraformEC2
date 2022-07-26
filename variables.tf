@@ -1,6 +1,6 @@
 variable "ami-id" {
   type        = string
-  default     = ""
+  default     = "ami-08df646e18b182346"
   description = "amazon machine image used to create the instance"
 }
 variable "instance-type" {
@@ -37,4 +37,29 @@ variable "key_name" {
   type        = string
   default     = "test-ec2-key"
   description = "description"
+}
+
+variable "vpc" {
+  type = string
+  description = "name of the vpc to be given"
+  default = "vpc-0fec54236ac31e647"
+
+}
+
+variable "tcp_inbound_ports" {
+  type = list(number)
+  description = "Inbound ports for EC2 instance"
+  default = [22, 80, 443]
+}
+
+variable "tcp_outbound_ports" {
+  type = list(number)
+  description = "OutBound ports for EC2 instance"
+  default = [80, 443]
+}
+
+variable "ssh" {
+  type = number
+  description = "(optional) describe your variable"
+  default = 22
 }
