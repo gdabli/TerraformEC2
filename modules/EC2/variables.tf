@@ -58,8 +58,4 @@ variable "tcp_outbound_ports" {
   default = [80, 443]
 }
 
-variable "ssh" {
-  type = number
-  description = "(optional) describe your variable"
-  default = 22
-}
+
